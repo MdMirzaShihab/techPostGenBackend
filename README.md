@@ -69,7 +69,7 @@ Ensure you have the following installed:
     │   ├── routers/         # API Routers
     │   │   └── contentRouter.js       # Content router
     │   ├── services/        # Reusable services or utilities
-    │   └── contentGenerator.js        # OpenAI content generation logic
+    │   │   └── contentGenerator.js        # OpenAI content generation logic
     │   ├── secret.js        # Load environment variables
     │   ├── app.js           # Express setup
     │   └── server.js        # Server entry point
@@ -91,13 +91,13 @@ Ensure you have the following installed:
 
 ## Tasks Checklists
 
-   - [x] Create base file sructure
+   - [x] Create a base file structure
    - [ ] Write Base contentModel > contentRouter > contentController  
    - [ ] Write content generation logic
    - [ ] Update contentModel > contentRouter > contentController to generate content, response and save upon API call
-   - [ ] Create get route to show all contents for content history.
-   - [ ] Create response controller to handle success and error response
+   - [ ] Create a get route to show all contents for content history.
+   - [ ] Create a response controller to handle success and error response
    - [ ] Write Base userModel > userRouter > userController to create user
-   - [ ] Write authRouter for login routes, helper function to create jwt, authController, Auth middleware to check login/logout status.
-   - [ ] Save favourites by updating the contentModel and with controller and router.
-   - [ ] Custom input by passing as a params to the contentGenerator.js
+   - [ ] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
+   - [ ] Save favourites by updating the contentModel and using the controller and router.
+   - [ ] Custom input by passing as a param to the contentGenerator.js
