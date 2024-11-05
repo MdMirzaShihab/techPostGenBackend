@@ -40,18 +40,18 @@ Ensure you have the following installed:
     npm install
 
 3. **Start the server**
-    Use nodemon for development:
+    Use $nodemon$ for development:
     ```bash
     npm run dev
 
-    Or use node for production:
+    Or use $node$ for production:
     ```bash
     npm start
 
 
 ### Configuration
-   .env file contains configuration variables for the server, MongoDB, and OpenAI API.
-   Default server port: 3001.
+   - .env file contains configuration variables for the server, MongoDB, and OpenAI API.
+   - Default server port: 3001.
 
 ## Project Structure
 
@@ -71,11 +71,11 @@ Ensure you have the following installed:
     ├── package-lock.json    # Dependency lock file
     └── README.md            # Project documentation
 
+```
 
+### Key Files
 
-###Key Files
-
-    src/config/db.js: MongoDB connection setup.
-    src/secret.js: Loads environment variables (DB URL, API keys).
-    src/app.js: Configures Express app and routes.
-    src/server.js: Starts the server and connects to the database.
+    $src/config/db.js$: MongoDB connection setup.
+    $src/secret.js$: Loads environment variables (DB URL, API keys).
+    $src/app.js$: Configures Express app and routes.
+    $src/server.js$: Starts the server and connects to the database.
