@@ -1,6 +1,6 @@
 # TechPostGen_Backend
 
-TechPostGen_Backend is an API server that generates AI-powered tech posts for social media. The backend uses OpenAI's API to generate tech-related content and stores posts in MongoDB. The server is built with Node.js and Express.
+TechPostGen_Backend is an API server that generates AI-powered tech posts for social media. The backend uses OpenAI's API to generate tech-related review post on recent news and stores posts in MongoDB. The server is built with Node.js and Express.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ TechPostGen_Backend is an API server that generates AI-powered tech posts for so
 
 ## Overview
 
-This backend project allows for generating AI-based tech posts, such as reviews and social media posts, using the OpenAI API. It's in the early stages of development and will be updated over time.
+This backend project allows for generating AI-based tech posts, such as reviews and social media posts, using the OpenAI API.
 
 ## Getting Started
 
