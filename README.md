@@ -69,7 +69,7 @@ Ensure you have the following installed:
     │   ├── routers/         # API Routers
     │   │   └── contentRouter.js       # Content router
     │   ├── services/        # Reusable services or utilities
-│   │   └── contentGenerator.js        # OpenAI content generation logic
+    │   └── contentGenerator.js        # OpenAI content generation logic
     │   ├── secret.js        # Load environment variables
     │   ├── app.js           # Express setup
     │   └── server.js        # Server entry point
