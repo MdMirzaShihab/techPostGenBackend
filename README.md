@@ -43,10 +43,11 @@ Ensure you have the following installed:
     Use $nodemon$ for development:
     ```bash
     npm run dev
-
+    ```
     Or use $node$ for production:
     ```bash
     npm start
+    ```
 
 
 ### Configuration
@@ -75,7 +76,7 @@ Ensure you have the following installed:
 
 ### Key Files
 
-    $src/config/db.js$: MongoDB connection setup.
-    $src/secret.js$: Loads environment variables (DB URL, API keys).
-    $src/app.js$: Configures Express app and routes.
-    $src/server.js$: Starts the server and connects to the database.
+    src/config/db.js: MongoDB connection setup.
+    src/secret.js: Loads environment variables (DB URL, API keys).
+    src/app.js: Configures Express app and routes.
+    src/server.js: Starts the server and connects to the database.
