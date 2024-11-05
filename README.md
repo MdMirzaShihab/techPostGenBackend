@@ -10,7 +10,6 @@ TechPostGen_Backend is an API server that generates AI-powered tech posts for so
   - [Installation](#installation)
   - [Configuration](#configuration)
 - [Project Structure](#project-structure)
-- [License](#license)
 
 ## Overview
 
