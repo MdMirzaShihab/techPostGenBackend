@@ -10,6 +10,8 @@ TechPostGen_Backend is an API server that generates AI-powered tech posts for so
   - [Installation](#installation)
   - [Configuration](#configuration)
 - [Project Structure](#project-structure)
+- [Tasks Checklists](#tasks-checklists)
+
 
 ## Overview
 
@@ -22,8 +24,8 @@ This backend project allows for generating AI-based tech posts, such as reviews 
 Ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v16+)
-- [MongoDB](https://www.mongodb.com/) (Atlas URL or local instance)
-- [OpenAI API Key](https://platform.openai.com/signup)
+- [npm](https://docs.npmjs.com/cli/v10/commands/npm-install) (v10+)
+
 
 ### Installation
 
@@ -39,11 +41,11 @@ Ensure you have the following installed:
     npm install
 
 3. **Start the server**
-    Use $nodemon$ for development:
+    Use `nodemon` for development:
     ```bash
     npm run dev
     ```
-    Or use $node$ for production:
+    Or use `node` for production:
     ```bash
     npm start
     ```
@@ -61,7 +63,13 @@ Ensure you have the following installed:
     │   ├── config/
     │   │   └── db.js        # MongoDB connection
     │   ├── controllers/     # Logic for API routes
+    │   │   └── contentController.js   # Content router logic
     │   ├── models/          # MongoDB models
+    │   │   └── contentModel.js        # Content model and schema
+    │   ├── routers/         # API Routers
+    │   │   └── contentRouter.js       # Content router
+    │   ├── services/        # Reusable services or utilities
+│   │   └── contentGenerator.js        # OpenAI content generation logic
     │   ├── secret.js        # Load environment variables
     │   ├── app.js           # Express setup
     │   └── server.js        # Server entry point
@@ -75,7 +83,21 @@ Ensure you have the following installed:
 
 ### Key Files
 
-    src/config/db.js: MongoDB connection setup.
-    src/secret.js: Loads environment variables (DB URL, API keys).
-    src/app.js: Configures Express app and routes.
-    src/server.js: Starts the server and connects to the database.
+   - `src/config/db.js`: MongoDB connection setup.
+   - `src/secret.js`: Loads environment variables (DB URL, API keys).
+   - `src/app.js`: Configures Express app and routes.
+   - `src/server.js`: Starts the server and connects to the database.
+
+
+## Tasks Checklists
+
+   - [x] Create base file sructure
+   - [ ] Write Base contentModel > contentRouter > contentController  
+   - [ ] Write content generation logic
+   - [ ] Update contentModel > contentRouter > contentController to generate content, response and save upon API call
+   - [ ] Create get route to show all contents for content history.
+   - [ ] Create response controller to handle success and error response
+   - [ ] Write Base userModel > userRouter > userController to create user
+   - [ ] Write authRouter for login routes, helper function to create jwt, authController, Auth middleware to check login/logout status.
+   - [ ] Save favourites by updating the contentModel and with controller and router.
+   - [ ] Custom input by passing as a params to the contentGenerator.js
