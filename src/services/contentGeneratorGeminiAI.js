@@ -2,6 +2,7 @@ const axios = require("axios");
 const { GeminiAPIKey } = require("../secret");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// Generate Tech Post using GeminiAI and return the generated text
 const generateContent = async () => {
   try {
     const genAI = new GoogleGenerativeAI(GeminiAPIKey);
@@ -10,11 +11,11 @@ const generateContent = async () => {
       generationConfig: {
         candidateCount: 1,
         stopSequences: ["x"],
-        maxOutputTokens: 20,
+        maxOutputTokens: 75,
       },
     });
     const result = await model.generateContent(
-      "Tell me a story about a magic backpack.",
+      "Write a concise review of the latest tech news from the past week, highlighting key innovations, announcements, or trends. The post should be engaging and limited to 300 characters or fewer.",
     );
 
     const generatedText = result.response.text();
