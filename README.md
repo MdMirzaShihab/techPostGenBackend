@@ -92,10 +92,10 @@ Ensure you have the following installed:
 ## Tasks Checklists
 
    - [x] Create a base file structure
-   - [ ] Write Base contentModel > contentRouter > contentController  
-   - [ ] Write content generation logic
-   - [ ] Update contentModel > contentRouter > contentController to generate content, response and save upon API call
-   - [ ] Create a get route to show all contents for content history.
+   - [x] Write Base contentModel > contentRouter > contentController  
+   - [x] Write content generation logic
+   - [x] Update contentModel > contentRouter > contentController to generate content, response and save upon API call
+   - [x] Create a get route to show all contents for content history.
    - [ ] Create a response controller to handle success and error response
    - [ ] Write Base userModel > userRouter > userController to create user
    - [ ] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
