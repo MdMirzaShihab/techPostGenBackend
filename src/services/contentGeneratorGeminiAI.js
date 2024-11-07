@@ -10,13 +10,11 @@ const generateContent = async () => {
       model: "gemini-1.5-flash",
       generationConfig: {
         candidateCount: 1,
-        stopSequences: ["x"],
-        maxOutputTokens: 75,
+        maxOutputTokens: 100, //will remove before submit to save token.
       },
     });
-    const result = await model.generateContent(
-      "Write a concise review of the latest tech news from the past week, highlighting key innovations, announcements, or trends. The post should be engaging and limited to 300 characters or fewer.",
-    );
+    const prompt = `Write a concise, engaging, and social-media-ready review of ONE major tech news item from the varity of the tech topics in the past 7 days. The post should be informative yet brief and be no longer than 300 characters.`;
+    const result = await model.generateContent(prompt);
 
     const generatedText = result.response.text();
     return generatedText;

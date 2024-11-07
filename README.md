@@ -96,7 +96,8 @@ Ensure you have the following installed:
    - [x] Write content generation logic
    - [x] Update contentModel > contentRouter > contentController to generate content, response and save upon API call
    - [x] Create a get route to show all contents for content history.
-   - [ ] Create a response controller to handle success and error response
+   - [x] Create a response controller to handle success and error response
+   - [x] Refactored for error handling
    - [ ] Write Base userModel > userRouter > userController to create user
    - [ ] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
    - [ ] Save favourites by updating the contentModel and using the controller and router.
