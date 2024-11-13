@@ -61,24 +61,34 @@ Ensure you have the following installed:
     TechPostGen_Backend/
     ├── src/
     │   ├── config/
-    │   │   └── db.js        # MongoDB connection
-    │   ├── controllers/     # Logic for API routes
-    │   │   └── contentController.js   # Content router logic
-    │   ├── models/          # MongoDB models
-    │   │   └── contentModel.js        # Content model and schema
-    │   ├── routers/         # API Routers
-    │   │   └── contentRouter.js       # Content router
-    │   ├── services/        # Reusable services or utilities
+    │   │   └── db.js                     # MongoDB connection
+    │   ├── controllers/                  # Logic for API routes
+    │   │   └── authController.js         # Auth router logic
+    │   │   └── contentController.js      # Content router logic
+    │   │   └── responseController.js     # Response router logic
+    │   │   └── userContrller.js          # Usser router logic
+    │   ├── helper/
+    │   │   └── jsonwebtoken.js           # Reusable JWT as a helper function
+    │   ├── middlewares/
+    │   │   └── auth.js                   # Authentication middleware
+    │   ├── models/                       # MongoDB models
+    │   │   └── contentModel.js           # Content model and schema
+    │   │   └── userModel.js              # User model and schema
+    │   ├── routers/                      # API Routers
+    │   │   └── authRouter.js             # Auth router
+    │   │   └── contentRouter.js          # Content router
+    │   │   └── userRouter.js             # User router
+    │   ├── services/                     # Reusable services or utilities
     │   │   └── contentGeneratorGeminiAI.js        # GeminiAI content generation logic
     │   │   └── contentGeneratorOpenAI.js          # OpenAI content generation logic
-    │   ├── secret.js        # Load environment variables
-    │   ├── app.js           # Express setup
-    │   └── server.js        # Server entry point
-    ├── .env                 # Environment variables
-    ├── .gitignore           # Git ignore rules
-    ├── package.json         # Project metadata and dependencies
-    ├── package-lock.json    # Dependency lock file
-    └── README.md            # Project documentation
+    │   ├── secret.js                     # Load environment variables
+    │   ├── app.js                        # Express setup
+    │   └── server.js                     # Server entry point
+    ├── .env                              # Environment variables
+    ├── .gitignore                        # Git ignore rules
+    ├── package.json                      # Project metadata and dependencies
+    ├── package-lock.json                 # Dependency lock file
+    └── README.md                         # Project documentation
 
 ```
 
@@ -99,7 +109,8 @@ Ensure you have the following installed:
    - [x] Create a get route to show all contents for content history.
    - [x] Create a response controller to handle success and error response
    - [x] Refactored for error handling
-   - [ ] Write Base userModel > userRouter > userController to create user
-   - [ ] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
+   - [x] Write Base userModel > userRouter > userController to create user
+   - [x] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
+   - [ ] Update content related code to store user data and pass history based on loggedIn users.
    - [ ] Save favourites by updating the contentModel and using the controller and router.
    - [ ] Custom input by passing as a param to the contentGenerator.js

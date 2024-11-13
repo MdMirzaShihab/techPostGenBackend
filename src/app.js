@@ -1,6 +1,12 @@
 const express = require("express");
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const cors = require('cors');
 const contentRouter = require("./routers/contentRouter");
+const userRouter = require("./routers/userRouter");
+const authRouter = require("./routers/authRouter");
+const { errorResponse } = require("./controllers/responseController");
 
 const app = express();
 
@@ -17,13 +23,18 @@ const corsOptions = {
 
 
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 app.use(cors(corsOptions));
+app.use(morgan("dev"));
 
 
 
 
 app.use("/api/posts", contentRouter);
+app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
 
 
 app.get("/", (req, res) => {
