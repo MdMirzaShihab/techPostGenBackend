@@ -25,7 +25,6 @@ const registerUser = async (req, res, next) => {
       statusCode: 200,
       message: `user registered successfully`,
       payload: {
-        token,
       },
     });
   } catch (error) {
