@@ -77,7 +77,15 @@ const handleLogout = async (req, res, next) => {
   }
 };
 
+const getStatus = (req, res) => {
+  res.status(200).json({
+    message: "User is authenticated",
+    user: req.user,
+  });
+};
+
 module.exports = {
   handleLogin,
   handleLogout,
+  getStatus
 };
