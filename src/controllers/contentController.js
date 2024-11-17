@@ -13,8 +13,11 @@ const createPost = async (req, res) => {
       throw createError(500, "Content generation failed");
     }
 
+    // If the user is logged in, associate the post with their ID
+    const userId = req.user ? req.user._id : null;
 
-    const newPost = await Content.create({ postContent: postContentGemini });
+
+    const newPost = await Content.create({ postContent: postContentGemini, user: userId });
 
     if (!newPost) {
       throw createError(500, "Post creation failed");
@@ -35,7 +38,16 @@ const createPost = async (req, res) => {
 // Retrieve all generated posts
 const getAllPosts = async (req, res) => {
   try {
-    const posts = await Content.find().sort({ createdAt: -1 });
+    let posts;
+
+    if (req.user) {
+      // If logged in, show only the user's posts
+      posts = await Content.find({ user: req.user._id }).sort({ createdAt: -1 });
+    } else {
+      // If not logged in, show all anonymous posts
+      posts = await Content.find({ user: null }).sort({ createdAt: -1 });
+    }
+    
     if (!posts) {
       throw createError(500, "Posts retrieval failed");
     }

@@ -111,6 +111,6 @@ Ensure you have the following installed:
    - [x] Refactored for error handling
    - [x] Write Base userModel > userRouter > userController to create user
    - [x] Write authRouter for login routes, a helper function to create JWT, authController, and Auth middleware to check login/logout status.
-   - [ ] Update content related code to store user data and pass history based on loggedIn users.
+   - [x] Update content related code to store user data and pass history based on loggedIn users.
    - [ ] Save favourites by updating the contentModel and using the controller and router.
    - [ ] Custom input by passing as a param to the contentGenerator.js

@@ -46,7 +46,35 @@ const isLoggedOut = (req, res, next) => {
 };
 
 
+const contentAccessController = (req, res, next) => {
+  try {
+    const accessToken = req.cookies.accessToken;
+
+    if (!accessToken) {
+      req.user = null; // No token, set user to null
+      return next();
+    }
+
+    const decoded = jwt.verify(accessToken, jwtActivationKey);
+
+    if (!decoded) {
+      req.user = null; // Invalid token, set user to null
+      return next();
+    }
+
+    req.user = decoded; // Attach user data to request
+
+    next();
+  } catch (error) {
+    req.user = null; // On error, set user to null
+    next();
+  }
+};
+
+
+
 module.exports = {
   isLoggedIn,
-  isLoggedOut
+  isLoggedOut,
+  contentAccessController
 };
